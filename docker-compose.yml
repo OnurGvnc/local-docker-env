@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  bun-app:
+    build:
+      context: ./docker/bun-base
+      dockerfile: Dockerfile
+      platforms:
+        - linux/amd64
+        - linux/arm64
+    image: local-bun-base:latest
+    container_name: bun-test-app
+    ports:
+      - "3005:3005"
+    volumes:
+      - ./test/example-app:/app
+      - ./test/example-app/entrypoint.sh:/app/entrypoint.sh:ro
+    environment:
+      - NODE_ENV=production
+      - PORT=3005
+      - INSTANCES=2
+      - CHECK_SETUP=true
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3005/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
