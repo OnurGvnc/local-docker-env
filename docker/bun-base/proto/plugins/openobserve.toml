@@ -1,0 +1,26 @@
+# File: openobserve.toml
+name = "openobserve"
+type = "cli"
+
+[resolve]
+versions = ["0.15.1"]
+
+[install]
+download-url = "https://downloads.openobserve.ai/releases/openobserve/{download_file}"
+
+[install.arch]
+aarch64 = "arm64"
+x86_64 = "amd64"
+
+[install.exes]
+[install.exes.openobserve]
+exe-path = "openobserve"
+primary = true
+
+
+[platform.linux]
+archs = ["x86_64", "aarch64"]
+download-file = "v{version}/openobserve-v{version}-linux-{arch}.tar.gz"
+
+[platform.macos]
+download-file = "v{version}/openobserve-v{version}-darwin-{arch}.tar.gz"

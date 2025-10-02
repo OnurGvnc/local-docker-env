@@ -1,0 +1,23 @@
+name = "neon-proxy"
+type = "cli"
+
+[resolve]
+versions = ["0.0.0-release-9129"]
+
+[install.arch]
+aarch64 = "arm64"
+x86_64 = "amd64"
+
+[install]
+download-url = "https://github.com/onurgvnc/local-neon-http-proxy/releases/download/{download_file}"
+
+[platform.linux]
+download-file = "{versionPrerelease}/neon-proxy-linux-{arch}"
+
+[platform.macos]
+download-file = "{versionPrerelease}/neon-proxy-darwin-{arch}"
+
+[install.exes]
+[install.exes.neon-proxy]
+exe-path = "neon-proxy"
+primary = true

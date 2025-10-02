@@ -1,0 +1,23 @@
+name = "lego"
+type = "cli"
+
+[resolve]
+versions = ["4.26.0"]
+
+[install]
+download-url = "https://github.com/go-acme/lego/releases/download/{download_file}"
+
+[install.exes]
+[install.exes.lego]
+exe-path = "lego"
+primary = true
+
+[install.arch]
+aarch64 = "arm64"
+x86_64 = "amd64"
+
+[platform.linux]
+download-file = "v{version}/lego_v{version}_linux_{arch}.tar.gz"
+
+[platform.macos]
+download-file = "v{version}/lego_v{version}_darwin_{arch}.tar.gz"

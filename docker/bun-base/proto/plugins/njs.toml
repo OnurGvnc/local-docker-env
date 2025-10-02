@@ -1,0 +1,23 @@
+name = "njs"
+type = "cli"
+
+[resolve]
+versions = ["0.9.1"]
+
+[install]
+download-url = "https://jirutka.github.io/nginx-binaries/{download_file}"
+
+[install.arch]
+aarch64 = "aarch64"
+x86_64 = "x86_64"
+
+[install.exes]
+[install.exes.njs]
+exe-path = "njs"
+primary = true
+
+[platform.linux]
+download-file = "njs-{version}-{arch}-linux"
+
+[platform.macos]
+download-file = "njs-{version}-arm64-darwin"

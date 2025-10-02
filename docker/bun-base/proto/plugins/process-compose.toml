@@ -1,0 +1,30 @@
+# original: https://raw.githubusercontent.com/Phault/proto-toml-plugins/main/traefik/plugin.toml
+name = "process-compose"
+type = "cli"
+
+[resolve]
+versions = ["1.75.2"]
+
+[platform.linux]
+download-file = "process-compose_linux_{arch}.tar.gz"
+checksum-file = "process-compose_checksums.txt"
+
+[platform.macos]
+download-file = "process-compose_darwin_{arch}.tar.gz"
+checksum-file = "process-compose_checksums.txt"
+
+[install]
+download-url = "https://github.com/F1bonacc1/process-compose/releases/download/v{version}/{download_file}"
+checksum-url = "https://github.com/F1bonacc1/process-compose/releases/download/v{version}/{checksum_file}"
+
+[install.arch]
+arm = "armv6"
+aarch64 = "arm64"
+x86 = "386"
+x86_64 = "amd64"
+
+
+[install.exes]
+[install.exes.process-compose]
+exe-path = "process-compose"
+primary = true

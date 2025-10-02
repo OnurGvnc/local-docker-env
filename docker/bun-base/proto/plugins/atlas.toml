@@ -1,0 +1,24 @@
+# original: https://raw.githubusercontent.com/crashdump/proto-tools/refs/heads/main/toml-plugins/atlas/plugin.toml
+
+name = "atlas"
+type = "cli"
+
+[resolve]
+versions = ["0.37.0"]
+
+[platform.linux]
+download-file = "atlas-community-linux-{arch}-v{version}"
+
+[platform.macos]
+download-file = "atlas-community-darwin-{arch}-v{version}"
+
+[platform.windows]
+download-file = "atlas-community-windows-{arch}-v{version}.exe"
+
+[install]
+download-url = "https://release.ariga.io/atlas/{download_file}"
+unpack = false
+
+[install.arch]
+aarch64 = "arm64"
+x86_64 = "amd64"

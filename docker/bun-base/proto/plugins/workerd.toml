@@ -1,0 +1,25 @@
+name = "workerd"
+type = "cli"
+
+[resolve]
+versions = ["1.20250924.0"]
+
+[install.arch]
+aarch64 = "arm64"
+x86_64 = "64"
+
+[install]
+download-url = "https://github.com/cloudflare/workerd/releases/download/{download_file}"
+
+[platform.linux]
+download-file = "v{version}/workerd-linux-{arch}.gz"
+exe-path = "workerd-linux-{arch}"
+
+[platform.macos]
+download-file = "v{version}/workerd-darwin-{arch}.gz"
+exe-path = "workerd-darwin-{arch}"
+
+[install.exes]
+[install.exes.workerd]
+exe-path = "workerd"
+primary = true

@@ -1,0 +1,23 @@
+name = "nginx"
+type = "cli"
+
+[resolve]
+versions = ["1.28.0"]
+
+[install]
+download-url = "https://jirutka.github.io/nginx-binaries/{download_file}"
+
+[install.arch]
+aarch64 = "aarch64"
+x86_64 = "x86_64"
+
+[install.exes]
+[install.exes.nginx]
+exe-path = "nginx"
+primary = true
+
+[platform.linux]
+download-file = "nginx-{version}-{arch}-linux"
+
+[platform.macos]
+download-file = "nginx-{version}-arm64-darwin"

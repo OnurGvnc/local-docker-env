@@ -1,0 +1,21 @@
+# original: https://raw.githubusercontent.com/appthrust/proto-toml-plugins/main/yq/plugin.toml
+name = "yq"
+type = "cli"
+
+[resolve]
+versions = ["4.47.2"]
+
+[platform.linux]
+download-file = "yq_linux_{arch}"
+checksum-file = "checksums"
+
+[platform.macos]
+download-file = "yq_darwin_{arch}"
+checksum-file = "checksums"
+
+[install]
+download-url = "https://github.com/mikefarah/yq/releases/download/v{version}/{download_file}"
+
+[install.arch]
+aarch64 = "arm64"
+x86_64 = "amd64"
