@@ -3,6 +3,7 @@
 https://moonrepo.dev/docs/proto/install
 
 ```sh
+rsync -av . devsidecar:/root/proto-plugins/
 ```
 
 ## native supported tools

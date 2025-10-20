@@ -1,0 +1,25 @@
+# File: openobserve.toml
+name = "oha"
+type = "cli"
+
+[resolve]
+versions = ["1.10.0"]
+
+[install]
+download-url = "https://github.com/hatoo/oha/releases/download/{download_file}"
+
+[install.arch]
+aarch64 = "arm64"
+x86_64 = "amd64"
+
+[install.exes]
+[install.exes.oha]
+exe-path = "oha"
+primary = true
+
+[platform.linux]
+archs = ["x86_64", "aarch64"]
+download-file = "v{version}/oha-linux-{arch}"
+
+[platform.macos]
+download-file = "v{version}/oha-macos-{arch}"
