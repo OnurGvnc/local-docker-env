@@ -68,12 +68,8 @@ RUN curl -fsSL https://moonrepo.dev/install/proto.sh | bash -s -- ${PROTO_VERSIO
 # COPY --from=ghcr.io/onurgvnc/local-neon-http-proxy:main --chmod=0755 /app/neon-proxy /usr/local/bin/neon-proxy
 # COPY --from=php:8.3.7-cli /usr/local/bin/php /usr/bin/php
 # COPY --from=docker:dind /usr/local/bin/docker /usr/local/bin/docker
-RUN mkdir -p /usr/local/lib/docker/cli-plugins
-COPY --from=docker:28.4.0 /usr/local/bin/docker /usr/local/bin/docker
-COPY --from=docker:28.4.0 /usr/local/bin/docker-compose /usr/local/bin/docker-compose
-
-# COPY --from=docker:28.4.0 /usr/libexec/docker/cli-plugins/docker-compose /usr/libexec/docker/cli-plugins/docker-compose
-# COPY --from=dockercli /usr/libexec/docker/cli-plugins/docker-buildx /usr/libexec/docker/cli-plugins/docker-buildx
+# COPY --from=docker:28.4.0 /usr/local/bin/docker /usr/local/bin/docker
+# COPY --from=docker:28.4.0 /usr/local/bin/docker-compose /usr/local/bin/docker-compose
 
 # HEALTHCHECK --interval=30s --timeout=3s CMD curl -f http://localhost:3005/ || exit 1
 

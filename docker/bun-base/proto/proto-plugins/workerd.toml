@@ -2,7 +2,7 @@ name = "workerd"
 type = "cli"
 
 [resolve]
-versions = ["1.20250924.0"]
+versions = ["1.20251011.0"]
 
 [install.arch]
 aarch64 = "arm64"
