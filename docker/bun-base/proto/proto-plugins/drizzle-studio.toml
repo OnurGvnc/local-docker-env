@@ -1,0 +1,23 @@
+name = "drizzle-studio"
+type = "cli"
+
+[resolve]
+versions = ["1.0.6"]
+
+[install.arch]
+aarch64 = "arm64"
+x86_64 = "x64"
+
+[install]
+download-url = "https://github.com/durably-run/drizzle-orm/releases/download/{download_file}"
+
+[platform.linux]
+download-file = "drizzle-gateway-{version}/drizzle-gateway-{version}-linux-{arch}"
+
+[platform.macos]
+download-file = "drizzle-gateway-{version}/drizzle-gateway-{version}-macos-{arch}"
+
+[install.exes]
+[install.exes.drizzle-studio]
+exe-path = "drizzle-studio"
+primary = true
